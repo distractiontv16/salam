@@ -1,19 +1,18 @@
 import React from 'react';
 import { ArrowDown } from 'lucide-react';
 import { Link } from './Link';
-import { TypeWriter } from './ui/TypeWriter';
+import { TextSlider } from './ui/TextSlider';
 import { SocialLinks } from './hero/SocialLinks';
 import { ContactInfo } from './hero/ContactInfo';
 import { ActionButtons } from './hero/ActionButtons';
 
 export function Hero() {
   const roles = [
-    "Full-Stack Developer",
-    "DSA Enthusiast",
-    "Problem Solver",
-    "Content Creator",
-    "Tech Innovator",
-    "Lifelong Learner",
+    "Étudiant en Bachelor Supply Chain",
+    "Co-Fondateur Fiabilitech",
+    "Spécialiste en Gestion Commerciale",
+    "Passionné d'Entrepreneuriat",
+    "Expert en Relations Client",
   ];
 
   return (
@@ -35,13 +34,13 @@ export function Hero() {
           <div className="flex flex-col items-center justify-center text-center space-y-4 order-2 md:order-1">
             <div className="space-y-2">
               <div className="inline-block bg-blue-100 dark:bg-blue-900/50 backdrop-blur-sm text-blue-600 dark:text-blue-300 text-sm font-medium px-4 py-2 rounded-full">
-              Hey! <span className="inline-block origin-[70%_70%] animate-wave">👋</span> I'm
+              Salut! <span className="inline-block origin-[70%_70%] animate-wave">👋</span> Je suis
               </div>
               <h1 className="text-4xl lg:text-6xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 bg-clip-text text-transparent animate-gradient">
-                Deepak Modi
+                SAIBOU ABDOU SALAM
               </h1>
               <div className="text-xl md:text-2xl text-gray-600 dark:text-gray-300">
-                I'm a <TypeWriter words={roles} delay={100} />
+                <TextSlider words={roles} delay={3000} />
               </div>
             </div>
 
@@ -60,8 +59,8 @@ export function Hero() {
 
             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full blur-3xl animate-pulse" />
             <img
-              src="/assets/profile.webp"
-              alt="Deepak Modi"
+              src="/images/profil.jpg"
+              alt="SAIBOU ABDOU SALAM"
               className="relative w-full max-w-lg mx-auto rounded-full shadow-2xl transform hover:scale-105 transition-transform duration-500"
             />
           </div>

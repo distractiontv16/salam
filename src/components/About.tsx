@@ -5,41 +5,41 @@ import { SectionTitle } from "./ui/SectionTitle";
 const aboutSections = [
   {
     icon: User2,
-    title: "Who I Am",
+    title: "Qui je suis",
     description: [
-      "A full-stack developer having interest in software engineering.",
-      "Enjoy solving problems and building scalable applications.",
-      "Always learning new technologies to improve my skills.",
+      "Étudiant en Bachelor Supply Chain passionné par la gestion commerciale.",
+      "Co-fondateur de Fiabilitech, agence de développement web et mobile.",
+      "Jeune entrepreneur déterminé avec un excellent sens relationnel.",
     ],
     color: "bg-blue-600",
   },
   {
     icon: Code2,
-    title: "What I Do",
+    title: "Ce que je fais",
     description: [
-      "Develop high-performance web apps using modern tech stacks.",
-      "Solve algorithmic problems and optimize code efficiency.",
-      "Contribute to open-source and follow industry trends.",
+      "Gestion commerciale et relation client dans l'immobilier.",
+      "Développement de solutions digitales avec Fiabilitech.",
+      "Optimisation des processus d'achat et de supply chain.",
     ],
     color: "bg-purple-600",
   },
   {
     icon: GoGoal,
-    title: "My Goals",
+    title: "Mes objectifs",
     description: [
-      "Build tech products that solve real-world challenges at scale.",
-      "Advance as a full-stack developer with modern frameworks.",
-      "Grow the dev community through open-source contributions.",
+      "Valider mon Bachelor Supply Chain avec excellence.",
+      "Développer Fiabilitech et créer des solutions innovantes.",
+      "Acquérir une expertise en gestion des achats et approvisionnement.",
     ],
     color: "bg-green-600",
   },
   {
     icon: Lightbulb,
-    title: "My Philosophy",
+    title: "Ma philosophie",
     description: [
-      "Technology should simplify lives, not complicate them.",
-      "Great software solves problems, not just writes code.",
-      "Continuous learning keeps you ahead in tech.",
+      "L'innovation doit servir l'efficacité commerciale.",
+      "L'excellence relationnelle est la clé du succès.",
+      "L'apprentissage continu ouvre toutes les opportunités.",
     ],
     color: "bg-orange-600",
   },
@@ -59,15 +59,15 @@ export function About() {
         {/* Introduction */}
         <div className="max-w-5xl mx-auto mb-16 text-center">
           <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-            Hey there! 👋 I'm <span className="text-blue-600 font-semibold">Deepak Modi</span>,
-            a Full-Stack Developer and final-year Computer Science Engineering student.
-            I love transforming ideas into scalable web applications and solving complex coding challenges. 
-            My journey in tech revolves around continuous learning, experimenting with new technologies, and building solutions that make an impact.
+            Salut ! 👋 Je suis <span className="text-blue-600 font-semibold">SAIBOU ABDOU SALAM</span>,
+            étudiant en Bachelor Supply Chain et co-fondateur de Fiabilitech.
+            Passionné par le commerce et l'entrepreneuriat, j'associe compétences en gestion commerciale
+            et expertise digitale pour créer des solutions innovantes et développer mon expérience professionnelle.
           </p>
 
           <div className="mt-6 flex justify-center">
             <span className="text-sm sm:text-base inline-block bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 px-4 py-2 rounded-lg shadow">
-              🚀 I like to build products and solve problems
+              🎯 Recherche d'alternance 2025-2026 • Bachelor Achats et Supply Chain
             </span>
           </div>
         </div>

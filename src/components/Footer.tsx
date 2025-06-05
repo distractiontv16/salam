@@ -24,17 +24,13 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   const links = [
-    { href: '#home', label: 'Home' },
-    { href: '#about', label: 'About' },
-    { href: '#skills', label: 'Skills' },
-    { href: '#projects', label: 'Projects' },
-    { href: '#github', label: 'GitHub' },
-    { href: '#leetcode', label: 'Leetcode' },
-    { href: '#badges', label: 'Badges' },
-    { href: '#blogs', label: 'Blogs' },
-    { href: '#experience', label: 'Experience' },
+    { href: '#home', label: 'Accueil' },
+    { href: '#about', label: 'À propos' },
+    { href: '#skills', label: 'Compétences' },
+    { href: '#projects', label: 'Projets' },
+    { href: '#experience', label: 'Expérience' },
     { href: '#certifications', label: 'Certifications' },
-    { href: '#education', label: 'Education' },
+    { href: '#education', label: 'Formation' },
     { href: '#contact', label: 'Contact' },
   ];
 
@@ -59,22 +55,11 @@ export function Footer() {
 
           {/* Copyright */}
           <div className="text-sm text-gray-500 dark:text-gray-400 text-center">
-            <p>© {currentYear} Deepak Modi. All rights reserved.</p>
+            <p>© {currentYear} SAIBOU ABDOU SALAM. Tous droits réservés.</p>
             <p className="flex items-center justify-center gap-2">
-              Built with <FaReact className="w-6 h-6 text-blue-500 animate-spin" /> using
+              Développé avec <FaReact className="w-6 h-6 text-blue-500 animate-spin" /> et
               <SiVite className="w-6 h-6 text-yellow-500 animate-pulse" />
             </p>
-          </div>
-
-          {/* Views Counter */}
-          <div className="flex justify-center">
-            <a href="https://hits.sh/deepakmodi.tech/" target="_blank" rel="noopener noreferrer">
-              <img 
-                src="https://hits.sh/deepakmodi.tech.svg?style=for-the-badge&label=Views&color=2a6acf&labelColor=1f2937" 
-                alt="Views" 
-                className="rounded-lg"
-              />
-            </a>
           </div>
 
         </div>
