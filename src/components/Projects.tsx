@@ -38,8 +38,8 @@ const techStacks = {
 const projects = [
   {
     title: 'DIM',
-    description: 'Boutique en ligne complète pour DIM, marque emblématique de lingerie française. Design élégant et moderne reflétant l\'identité premium de la marque avec une expérience utilisateur optimisée pour maximiser les conversions.',
-    image: 'https://via.placeholder.com/800x400/4F46E5/FFFFFF?text=DIM+E-commerce',
+    description: 'Nous avons développé une boutique en ligne complète pour DIM, une marque emblématique de lingerie française qui souhaitait optimiser son expérience de vente en ligne. Notre approche a combiné un design élégant et moderne reflétant l\'identité premium de la marque avec une expérience utilisateur soigneusement optimisée pour maximiser les conversions.',
+    image: '/assets/DIM.png',
     link: 'https://www.dim.com/',
     github: '',
     techStack: [
@@ -51,8 +51,8 @@ const projects = [
   },
   {
     title: 'By G2S Immobilier',
-    description: 'Site web élégant et fonctionnel pour une agence immobilière basée à Bondy Paris. Présentation du portefeuille de biens avec recherche avancée et galerie photo pour faciliter le contact avec les clients potentiels.',
-    image: 'https://via.placeholder.com/800x400/8B5CF6/FFFFFF?text=G2S+Immobilier',
+    description: 'By G2S Immobilier, une agence immobilière basée à Bondy Paris, souhaitait développer une présence en ligne reflétant son expertise et permettant de présenter son portefeuille de biens. Notre équipe a conçu un site web élégant et fonctionnel mettant en valeur les propriétés disponibles et facilitant le contact avec les clients potentiels.',
+    image: '/assets/Immobilier.png',
     link: 'https://www.byg2simmobilier.fr/',
     github: '',
     techStack: [
@@ -62,7 +62,19 @@ const projects = [
       techStacks.firebase,
     ],
   },
-
+  {
+    title: 'Maxi Meubles',
+    description: 'Maxi Meubles souhaitait lancer une boutique en ligne pour commercialiser leur gamme de mobilier design à prix abordable. Notre équipe a conçu une plateforme e-commerce complète, mettant en valeur leur catalogue de produits et optimisant l\'expérience d\'achat pour maximiser les conversions.',
+    image: '/assets/Maxi_Meubles.png',
+    link: 'https://www.maxi-meubles.fr/',
+    github: '',
+    techStack: [
+      techStacks.react,
+      techStacks.tailwind,
+      techStacks.typescript,
+      techStacks.stripe,
+    ],
+  },
 ];
 
 export function Projects() {

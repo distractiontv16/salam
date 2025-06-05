@@ -27,18 +27,18 @@ export function TextSlider({
   }, [words.length, delay, infinite]);
 
   return (
-    <span className="relative inline-block min-h-[1.5em]">
+    <div className="relative inline-block min-h-[2em] w-full">
       <AnimatePresence mode="wait">
         <motion.span
           key={currentWordIndex}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
-          transition={{ 
-            duration: 0.5, 
-            ease: "easeInOut" 
+          transition={{
+            duration: 0.5,
+            ease: "easeInOut"
           }}
-          className={`absolute inset-0 font-semibold whitespace-nowrap ${
+          className={`block font-semibold text-center ${
             gradient
               ? "bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent"
               : "text-blue-600 dark:text-blue-400"
@@ -47,6 +47,6 @@ export function TextSlider({
           {words[currentWordIndex]}
         </motion.span>
       </AnimatePresence>
-    </span>
+    </div>
   );
 }

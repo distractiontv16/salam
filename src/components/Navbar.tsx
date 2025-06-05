@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowRight } from 'lucide-react';
+import { Menu, X, ArrowRight, ChevronDown } from 'lucide-react';
 import { Link } from './Link';
 import { useTheme } from '../hooks/useTheme';
 import { ThemeToggle } from './ui/ThemeToggle';
@@ -45,12 +45,8 @@ export function Navbar() {
     { href: '#about', label: 'À propos' },
     { href: '#skills', label: 'Compétences' },
     { href: '#projects', label: 'Projets' },
-    { href: '#badges', label: 'Centres d\'intérêt' },
-    { href: '#blogs', label: 'Blog' },
-    { href: '#experience', label: 'Expérience' },
-    { href: '#certifications', label: 'Certifications' },
-    { href: '#education', label: 'Formation' },
-    { href: '#languages', label: 'Langues' },
+    { href: '#experience', label: 'Parcours' },
+    { href: '#contact', label: 'Contact' },
   ];
 
   return (
