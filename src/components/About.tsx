@@ -72,6 +72,47 @@ export function About() {
           </div>
         </div>
 
+        {/* Fiabilitech Section */}
+        <div className="max-w-5xl mx-auto mb-16">
+          <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-2xl p-8 border border-blue-200 dark:border-blue-800">
+            <div className="text-center mb-6">
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                🚀 Fiabilitech
+              </h3>
+              <p className="text-lg text-blue-600 dark:text-blue-400 font-semibold">
+                Agence de développement web et mobile
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              <div>
+                <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-3">Notre mission</h4>
+                <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
+                  Fiabilitech accompagne les entreprises dans leur transformation digitale en créant
+                  des solutions web et mobile sur mesure. Nous développons des sites e-commerce,
+                  des applications mobiles et des plateformes digitales performantes.
+                </p>
+              </div>
+
+              <div>
+                <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-3">Nos réalisations</h4>
+                <ul className="text-gray-700 dark:text-gray-300 text-sm space-y-1">
+                  <li>• Site e-commerce DIM (marque de lingerie)</li>
+                  <li>• Plateforme immobilière By G2S Immobilier</li>
+                  <li>• Site e-commerce Maxi Meubles</li>
+                  <li>• Solutions digitales sur mesure</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="mt-6 text-center">
+              <span className="inline-block bg-white dark:bg-gray-800 text-blue-600 dark:text-blue-400 px-4 py-2 rounded-lg shadow text-sm font-medium">
+                💼 Co-Fondateur & Développeur
+              </span>
+            </div>
+          </div>
+        </div>
+
         {/* About Section Cards */}
         <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
           {aboutSections.map(({ icon: Icon, title, description, color }) => (

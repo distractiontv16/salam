@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
-import { letterPaths } from "./svgPaths";
 
 export function HandwritingAnimation() {
-  const [animationCompleted, setAnimationCompleted] = useState(false);
+  const name = "SAIBOU ABDOU SALAM";
+  const letters = name.split("");
 
   return (
     <motion.div
@@ -12,55 +12,39 @@ export function HandwritingAnimation() {
       transition={{ duration: 1.2, ease: "easeInOut" }}
       className="w-full h-screen flex items-center justify-center bg-white dark:bg-gray-900"
     >
-      <svg
-        viewBox="0 0 1158.6 200.001"
-        className="max-w-full max-h-full ml-16 md:ml-48" // Added responsive margin-left
-      >
-        {letterPaths.map((letter, index) => (
-          <motion.path
-            key={letter.id}
-            d={letter.path}
-            stroke="currentColor"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            initial={{
-              pathLength: 0,
-              opacity: 0,
-              fill: "transparent",
-            }}
-            animate={{
-              pathLength: 1,
-              opacity: 1,
-              fill: animationCompleted ? "#3b82f6" : "transparent", // Apply fill only after all strokes
-            }}
-            transition={{
-              pathLength: {
-                duration: 1.5, // Stroke drawing duration
-                delay: index * 0.2, // Staggered animation
-                ease: [0.42, 0, 0.58, 1],
-              },
-              opacity: {
-                duration: 1,
-                delay: index * 0.2,
-                ease: "easeInOut",
-              },
-              fill: {
-                duration: 0.8, // Fill animation duration
-                delay: 0, // No delay, starts after last stroke
-                ease: "easeInOut",
-              },
-            }}
-            className={`text-blue-600 dark:text-blue-400`}
-            onAnimationComplete={() => {
-              // Trigger fill animation when the last stroke completes
-              if (index === letterPaths.length - 1) {
-                setAnimationCompleted(true);
-              }
-            }}
-          />
-        ))}
-      </svg>
+      <div className="text-center">
+        <motion.div
+          className="text-4xl md:text-6xl font-bold text-blue-600 dark:text-blue-400 mb-4"
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+        >
+          {letters.map((letter, index) => (
+            <motion.span
+              key={index}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.1,
+                ease: "easeOut"
+              }}
+              className={letter === " " ? "inline-block w-4" : "inline-block"}
+            >
+              {letter === " " ? "\u00A0" : letter}
+            </motion.span>
+          ))}
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 2.5 }}
+          className="text-lg text-gray-600 dark:text-gray-300"
+        >
+          Co-Fondateur Fiabilitech • Étudiant Supply Chain
+        </motion.div>
+      </div>
     </motion.div>
   );
 }

@@ -28,9 +28,12 @@ export function Footer() {
     { href: '#about', label: 'À propos' },
     { href: '#skills', label: 'Compétences' },
     { href: '#projects', label: 'Projets' },
+    { href: '#badges', label: 'Centres d\'intérêt' },
+    { href: '#blogs', label: 'Blog' },
     { href: '#experience', label: 'Expérience' },
     { href: '#certifications', label: 'Certifications' },
     { href: '#education', label: 'Formation' },
+    { href: '#languages', label: 'Langues' },
     { href: '#contact', label: 'Contact' },
   ];
 

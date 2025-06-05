@@ -7,14 +7,18 @@ interface EducationCardProps {
   period: string;
   score: string;
   isLast: boolean;
+  description?: string;
+  skills?: string[];
 }
 
-export function EducationCard({ 
-  degree, 
-  institution, 
-  period, 
-  score, 
-  isLast 
+export function EducationCard({
+  degree,
+  institution,
+  period,
+  score,
+  isLast,
+  description,
+  skills
 }: EducationCardProps) {
   return (
     <div className="relative group bg-gray-200 dark:bg-gray-800 p-4 sm:p-8 rounded-xl shadow-lg hover:shadow-xl border border-gray-300 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-400">
@@ -43,9 +47,33 @@ export function EducationCard({
             {/* Score */}
             <div className="flex items-center gap-1 text-gray-600 dark:text-gray-400">
               <Award className="w-4 h-4" />
-              <span className="text-sm">Score: {score}</span>
+              <span className="text-sm">Statut: {score}</span>
             </div>
           </div>
+
+          {/* Description */}
+          {description && (
+            <p className="mt-4 text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
+              {description}
+            </p>
+          )}
+
+          {/* Skills */}
+          {skills && skills.length > 0 && (
+            <div className="mt-4">
+              <h4 className="text-sm font-semibold text-gray-800 dark:text-gray-200 mb-2">Compétences acquises :</h4>
+              <div className="flex flex-wrap gap-2">
+                {skills.map((skill, index) => (
+                  <span
+                    key={index}
+                    className="px-3 py-1 text-xs font-medium bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </div>
 
