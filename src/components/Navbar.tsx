@@ -59,7 +59,9 @@ export function Navbar() {
         <div className="flex items-center justify-between h-12 px-4">
           {/* Logo */}
           <div className="cursor-pointer" onClick={handleLogoClick}>
-            <img src="/assets/favicon.png" alt="Logo" className="h-8 w-auto" />
+            <span className="text-2xl font-bold text-blue-600 dark:text-blue-400 font-sans">
+              SALAM
+            </span>
           </div>
 
           {/* Desktop Navigation */}
