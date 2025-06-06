@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowDown } from 'lucide-react';
+import { ArrowDown, Hand } from 'lucide-react';
 import { Link } from './Link';
 import { TextSlider } from './ui/TextSlider';
 import { SocialLinks } from './hero/SocialLinks';
@@ -34,7 +34,7 @@ export function Hero() {
           <div className="flex flex-col items-center justify-center text-center space-y-4 order-2 md:order-1">
             <div className="space-y-2">
               <div className="inline-block bg-blue-100 dark:bg-blue-900/50 backdrop-blur-sm text-blue-600 dark:text-blue-300 text-sm font-medium px-4 py-2 rounded-full">
-              Salut! <span className="inline-block origin-[70%_70%] animate-wave">👋</span> Je suis
+              Salut! <Hand className="inline-block w-4 h-4 origin-[70%_70%] animate-wave" /> Je suis
               </div>
               <h1 className="text-4xl lg:text-6xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 bg-clip-text text-transparent animate-gradient">
                 SAIBOU ABDOU SALAM

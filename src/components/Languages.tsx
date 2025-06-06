@@ -1,20 +1,22 @@
 import React from 'react';
 import { SectionTitle } from './ui/SectionTitle';
-import { Globe } from 'lucide-react';
+import { Globe, MapPin } from 'lucide-react';
 
 const languages = [
   {
     name: "Français",
     level: "Natif",
     code: "fr",
-    flag: "🇫🇷",
+    color: "text-blue-600",
+    bgColor: "bg-blue-100 dark:bg-blue-900",
     percentage: 100
   },
   {
     name: "Anglais",
     level: "Intermédiaire",
-    code: "en", 
-    flag: "🇬🇧",
+    code: "en",
+    color: "text-red-600",
+    bgColor: "bg-red-100 dark:bg-red-900",
     percentage: 70
   }
 ];

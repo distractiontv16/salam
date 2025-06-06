@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from './Link';
 import { SocialLinks } from './hero/SocialLinks';
-import { Mail, Phone, MapPin, Heart, ArrowUp } from 'lucide-react';
+import { Mail, Phone, MapPin, Heart } from 'lucide-react';
 
 interface FooterLinkProps {
   href: string;
@@ -29,9 +29,7 @@ export function Footer() {
     { href: '#experience', label: 'Parcours' },
   ];
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+
 
   return (
     <footer className="relative bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white overflow-hidden">
@@ -112,27 +110,10 @@ export function Footer() {
             <div className="flex items-center gap-4">
               <SocialLinks />
             </div>
-
-            {/* Bouton retour en haut */}
-            <button
-              onClick={scrollToTop}
-              className="group flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition-all duration-300 transform hover:scale-105"
-            >
-              <ArrowUp className="w-4 h-4 group-hover:animate-bounce" />
-              <span className="text-sm font-medium">Haut de page</span>
-            </button>
           </div>
         </div>
 
-        {/* Status d'alternance */}
-        <div className="mt-6 text-center">
-          <div className="inline-flex items-center gap-2 bg-green-600/20 border border-green-500/30 rounded-full px-4 py-2">
-            <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-            <span className="text-green-300 text-sm font-medium">
-              🎯 Recherche d'alternance 2025-2026 - Bachelor Achats et Supply Chain
-            </span>
-          </div>
-        </div>
+
       </div>
     </footer>
   );

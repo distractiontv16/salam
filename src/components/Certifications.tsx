@@ -11,7 +11,7 @@ const certifications = [
     issuer: "Plateforme nationale",
     date: "2022",
     link: "#",
-    image: "https://via.placeholder.com/400x300/8B5CF6/FFFFFF?text=Certification+PIX",
+    image: "/assets/Certification_PIX.jpg",
     description: "Certification des compétences numériques selon le référentiel européen DIGCOMP.",
     skills: [
       "Maîtrise des outils numériques",

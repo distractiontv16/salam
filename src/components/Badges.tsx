@@ -1,53 +1,71 @@
 import React from "react";
 import { SectionTitle } from "./ui/SectionTitle";
+import {
+  Activity,
+  BookOpen,
+  Plane,
+  Laptop,
+  ChefHat,
+  Music,
+  Palette,
+  Briefcase
+} from "lucide-react";
 
 const interests = [
   {
     id: "sport",
     name: "Sport",
-    icon: "🏃‍♂️",
+    icon: Activity,
+    color: "text-green-500",
     description: "Activités sportives et bien-être"
   },
   {
     id: "lecture",
     name: "Lecture",
-    icon: "📚",
+    icon: BookOpen,
+    color: "text-blue-500",
     description: "Développement personnel et professionnel"
   },
   {
     id: "voyages",
     name: "Voyages",
-    icon: "✈️",
+    icon: Plane,
+    color: "text-sky-500",
     description: "Découverte de nouvelles cultures"
   },
   {
     id: "tech",
     name: "Nouvelles technologies",
-    icon: "💻",
+    icon: Laptop,
+    color: "text-purple-500",
     description: "Innovation et digital"
   },
   {
     id: "cuisine",
     name: "Cuisine",
-    icon: "🍳",
+    icon: ChefHat,
+    color: "text-orange-500",
     description: "Art culinaire et gastronomie"
   },
   {
     id: "musique",
     name: "Musique",
-    icon: "🎵",
+    icon: Music,
+    color: "text-pink-500",
     description: "Écoute et découverte musicale"
   },
   {
     id: "design",
     name: "Design",
-    icon: "🎨",
+    icon: Palette,
+    color: "text-indigo-500",
     description: "Créativité et esthétique"
   },
   {
     id: "entrepreneuriat",
     name: "Entrepreneuriat",
-    icon: "💼",
+    icon: Briefcase,
+    color: "text-amber-500",
     description: "Innovation et création d'entreprise"
   },
 ];
@@ -69,8 +87,8 @@ export function Badges() {
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 rounded-xl transition-all duration-300" />
 
               {/* Interest Icon */}
-              <div className="text-4xl mb-3 transform group-hover:scale-110 transition-transform duration-300">
-                {interest.icon}
+              <div className="mb-3 transform group-hover:scale-110 transition-transform duration-300">
+                <interest.icon className={`w-10 h-10 ${interest.color}`} />
               </div>
 
               {/* Interest Name */}
