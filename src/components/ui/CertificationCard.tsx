@@ -1,4 +1,3 @@
-import React from 'react';
 import { Award, ExternalLink } from 'lucide-react';
 
 interface CertificationCardProps {
@@ -12,6 +11,8 @@ interface CertificationCardProps {
 }
 
 export function CertificationCard({ title, issuer, date, link, image, description, skills }: CertificationCardProps) {
+  console.log(`Rendering ${title} with ${skills?.length || 0} skills:`, skills); // Debug log
+
   return (
     <div className="relative bg-white dark:bg-gray-900 rounded-lg shadow-xl transition-transform duration-300 overflow-hidden group h-full">
       {/* Background Image */}
@@ -41,24 +42,24 @@ export function CertificationCard({ title, issuer, date, link, image, descriptio
           </p>
         )}
 
+        {/* TOUTES LES COMPÉTENCES AFFICHÉES - AUCUNE LIMITATION */}
         {skills && skills.length > 0 && (
           <div className="mb-4">
-            <h4 className="text-sm font-semibold text-gray-800 dark:text-gray-200 mb-2">Compétences :</h4>
-            <div className="flex flex-wrap gap-1">
-              {skills.slice(0, 3).map((skill, index) => (
+            <h4 className="text-sm font-semibold text-gray-800 dark:text-gray-200 mb-2">
+              Compétences ({skills.length}) :
+            </h4>
+            <div className="flex flex-wrap gap-2">
+              {skills.map((skill, index) => (
                 <span
-                  key={index}
-                  className="px-2 py-1 text-xs font-medium bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full"
+                  key={`skill-${index}-${skill}`}
+                  className="px-3 py-1 text-xs font-medium bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full border border-blue-200 dark:border-blue-700"
                 >
                   {skill}
                 </span>
               ))}
-              {skills.length > 3 && (
-                <span className="px-2 py-1 text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded-full">
-                  +{skills.length - 3}
-                </span>
-              )}
             </div>
+            <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">
+            </p>
           </div>
         )}
 

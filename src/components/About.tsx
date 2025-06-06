@@ -59,57 +59,23 @@ export function About() {
         {/* Introduction */}
         <div className="max-w-5xl mx-auto mb-16 text-center">
           <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-            Salut ! 👋 Je suis <span className="text-blue-600 font-semibold">SAIBOU ABDOU SALAM</span>,
-            étudiant en Bachelor Supply Chain et co-fondateur de Fiabilitech.
-            Passionné par le commerce et l'entrepreneuriat, j'associe compétences en gestion commerciale
-            et expertise digitale pour créer des solutions innovantes et développer mon expérience professionnelle.
+            Passionné par la tech et l'entrepreneuriat, j'ai lancé Fiabilitech avec une conviction : le digital doit être puissant, fluide et aligné avec vos objectifs.
+          </p>
+          <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed mt-4">
+            Aujourd'hui, je transforme cette vision en solutions web et mobile sur mesure, en combinant rigueur technique, gestion de projet agile et une obsession : vos résultats.
+          </p>
+          <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed mt-4 font-semibold">
+            Besoin d'un partenaire qui allie créativité et exécution sans compromis?
           </p>
 
-          <div className="mt-6 flex justify-center">
-            <span className="text-sm sm:text-base inline-block bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 px-4 py-2 rounded-lg shadow">
-              🎯 Recherche d'alternance 2025-2026 • Bachelor Achats et Supply Chain
-            </span>
-          </div>
-        </div>
-
-        {/* Fiabilitech Section */}
-        <div className="max-w-5xl mx-auto mb-16">
-          <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-2xl p-8 border border-blue-200 dark:border-blue-800">
-            <div className="text-center mb-6">
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                🚀 Fiabilitech
-              </h3>
-              <p className="text-lg text-blue-600 dark:text-blue-400 font-semibold">
-                Agence de développement web et mobile
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-6">
-              <div>
-                <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-3">Notre mission</h4>
-                <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
-                  Fiabilitech accompagne les entreprises dans leur transformation digitale en créant
-                  des solutions web et mobile sur mesure. Nous développons des sites e-commerce,
-                  des applications mobiles et des plateformes digitales performantes.
-                </p>
-              </div>
-
-              <div>
-                <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-3">Nos réalisations</h4>
-                <ul className="text-gray-700 dark:text-gray-300 text-sm space-y-1">
-                  <li>• Site e-commerce DIM (marque de lingerie)</li>
-                  <li>• Plateforme immobilière By G2S Immobilier</li>
-                  <li>• Site e-commerce Maxi Meubles</li>
-                  <li>• Solutions digitales sur mesure</li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="mt-6 text-center">
-              <span className="inline-block bg-white dark:bg-gray-800 text-blue-600 dark:text-blue-400 px-4 py-2 rounded-lg shadow text-sm font-medium">
-                💼 Co-Fondateur & Développeur
-              </span>
-            </div>
+          {/* Call to Action Button */}
+          <div className="mt-8">
+            <a
+              href="#contact"
+              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+            >
+              Parlons-en
+            </a>
           </div>
         </div>
 

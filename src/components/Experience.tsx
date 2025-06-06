@@ -18,6 +18,18 @@ const experiences = [
   },
   {
     title: "Stage de 8 semaines",
+    company: "Carrefour express",
+    period: "2023-2024",
+    description: `Compétences en vente et relation client: Accueil et conseil client, Techniques de vente (argumentation, fidélisation), Gestion des réclamations, Mise en place d'animations commerciales.
+    Compétences en gestion de magasin: Réception et contrôle des livraisons, Mise en rayon (facing, rotation des produits), Gestion des stocks et des inventaires, Suivi des indicateurs de performance (chiffre d'affaires, marges).
+    Compétences en caisse: Encaissement et rendu monnaie, Gestion des moyens de paiement, Ouverture et fermeture de caisse, Application des procédures de sécurité.
+    Compétences en hygiène et sécurité: Respect des normes d'hygiène (surtout pour les produits frais), Respect des consignes de sécurité alimentaire, Prévention des pertes et vols.
+    Compétences en travail d'équipe et autonomie: Collaboration avec les collègues et la hiérarchie, Capacité d'adaptation à différents postes, Prise d'initiative et autonomie progressive.
+    Compétences en gestion administrative (selon le poste): Suivi des commandes fournisseurs, Gestion des documents commerciaux, Participation à l'organisation des plannings.`,
+    skills: ["Vente", "Relation Client", "Gestion Magasin", "Caisse", "Hygiène & Sécurité", "Travail d'équipe"],
+  },
+  {
+    title: "Stage de 8 semaines",
     company: "U Express",
     period: "2023",
     description: `Réception des commandes et vérification.
@@ -45,6 +57,14 @@ const experiences = [
     Réception des commandes et vérification des produits.
     Classement et mise en disposition des produits en rayon.`,
     skills: ["Accueil client", "Gestion des stocks", "Organisation"],
+  },
+  {
+    title: "Stage",
+    company: "Bibliothèque de Oissel",
+    period: "Janvier 2017",
+    description: `Accueil des clients et orientation.
+    Classement et rangement des documents.`,
+    skills: ["Accueil client", "Organisation", "Gestion documentaire"],
   },
 ];
 
