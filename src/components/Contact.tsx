@@ -30,7 +30,7 @@ export function Contact() {
                 className="flex items-center gap-3 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
               >
                 <Phone className="w-6 h-6" />
-                <span>+33 7 67 43 87 81</span>
+                <span>+33 06 51 10 43 34</span>
               </a>
               <a
                 href="https://linkedin.com/in/saibou-abdou-salam"

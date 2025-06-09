@@ -23,10 +23,12 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   const quickLinks = [
+    { href: '#home', label: 'Accueil' },
     { href: '#about', label: 'À propos' },
     { href: '#skills', label: 'Compétences' },
     { href: '#projects', label: 'Projets' },
     { href: '#experience', label: 'Parcours' },
+    { href: '#contact', label: 'Contact' },
   ];
 
 
@@ -59,7 +61,7 @@ export function Footer() {
               </div>
               <div className="flex items-center gap-3 text-gray-300">
                 <Phone className="w-4 h-4 text-blue-400" />
-                <span className="text-sm">+33 7 67 43 87 81</span>
+                <span className="text-sm">+33 06 51 10 43 34</span>
               </div>
               <div className="flex items-center gap-3 text-gray-300">
                 <MapPin className="w-4 h-4 text-blue-400" />
@@ -84,11 +86,22 @@ export function Footer() {
             <p className="text-gray-300 text-sm mb-4">
               Agence de développement web et mobile spécialisée dans les solutions e-commerce.
             </p>
-            <div className="space-y-2">
+            <div className="space-y-2 mb-4">
               <div className="text-sm text-gray-400">• Sites e-commerce</div>
               <div className="text-sm text-gray-400">• Applications mobiles</div>
               <div className="text-sm text-gray-400">• Solutions sur mesure</div>
             </div>
+            <a
+              href="https://fiablitech.fr/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-600 to-blue-600 text-white text-sm rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
+            >
+              Découvrir Fiablitech
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
           </div>
         </div>
 

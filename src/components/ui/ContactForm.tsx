@@ -51,7 +51,7 @@ export function ContactForm() {
       {/* Name */}
       <div>
         <label htmlFor="name" className="block text-sm font-medium mb-2">
-          Name
+          Nom
         </label>
         <div className="relative">
           <div className="absolute inset-y-0 left-3 flex items-center text-gray-400">
@@ -64,7 +64,7 @@ export function ContactForm() {
             value={formData.name}
             onChange={handleChange}
             required
-            placeholder="Enter your name"
+            placeholder="Entrez votre nom"
             className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-gray-100 dark:bg-gray-800 placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:outline-none"
           />
         </div>
@@ -86,7 +86,7 @@ export function ContactForm() {
             value={formData.email}
             onChange={handleChange}
             required
-            placeholder="Enter your email"
+            placeholder="Entrez votre email"
             className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-gray-100 dark:bg-gray-800 placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:outline-none"
           />
         </div>
@@ -107,7 +107,7 @@ export function ContactForm() {
             value={formData.message}
             onChange={handleChange}
             required
-            placeholder="Enter your message"
+            placeholder="Entrez votre message"
             rows={4}
             className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-gray-100 dark:bg-gray-800 placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:outline-none resize-none"
           />
@@ -124,16 +124,16 @@ export function ContactForm() {
             : 'bg-blue-600 hover:bg-blue-700 text-white'
         }`}
       >
-        {status === 'submitting' ? 'Sending...' : 'Send Message'}
+        {status === 'submitting' ? 'Envoi en cours...' : 'Envoyer le message'}
         {status !== 'submitting' && <LuMessageSquareShare className="w-5 h-5" />}
       </button>
 
       {/* Status Messages */}
       {status === 'success' && (
-        <p className="text-green-600 text-center mt-4">Message sent successfully!</p>
+        <p className="text-green-600 text-center mt-4">Message envoyé ! Merci pour votre message. Je vous répondrai dans les plus brefs délais.</p>
       )}
       {status === 'error' && (
-        <p className="text-red-600 text-center mt-4">{errorMessage}</p>
+        <p className="text-red-600 text-center mt-4">Une erreur s'est produite. Veuillez réessayer plus tard.</p>
       )}
     </form>
   );

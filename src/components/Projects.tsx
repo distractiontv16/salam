@@ -85,8 +85,37 @@ export function Projects() {
 
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
-            <ProjectCard key={project.title} {...project} />
+            <ProjectCard
+              key={project.title}
+              {...project}
+              specialButton={{
+                text: "Voir Fiablitech",
+                url: "https://fiablitech.fr/",
+                isExternal: true
+              }}
+            />
           ))}
+        </div>
+
+        {/* Section Fiablitech Call-to-Action */}
+        <div className="mt-16 text-center">
+          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white">
+            <h3 className="text-2xl font-bold mb-4">Découvrez Fiablitech</h3>
+            <p className="text-lg mb-6 opacity-90">
+              Agence de développement web et mobile spécialisée dans les solutions e-commerce innovantes
+            </p>
+            <a
+              href="https://fiablitech.fr/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+            >
+              En savoir plus sur Fiablitech
+              <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
     </section>
