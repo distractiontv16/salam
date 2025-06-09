@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { Save, ArrowLeft, Eye, EyeOff, User, Mail, Phone, MapPin, Briefcase, GraduationCap, Globe, MessageSquare } from 'lucide-react';
+import { Save, ArrowLeft, Eye, EyeOff, User, Mail, Briefcase, GraduationCap, Globe, MessageSquare } from 'lucide-react';
 import { useContent } from '../../contexts/ContentContext';
 
 export function AdminPanel() {
-  const { content, updateContent, resetContent } = useContent();
+  const { content, updateContent } = useContent();
   const [selectedSection, setSelectedSection] = useState<string>('hero');
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
-  const [editingData, setEditingData] = useState<any>({});
+  const [editingData, setEditingData] = useState<Record<string, unknown>>({});
 
   const sections = [
     { id: 'hero', label: 'Section Hero', icon: User },
@@ -54,33 +54,14 @@ export function AdminPanel() {
     alert('Modifications sauvegardées avec succès !');
   };
 
-  const handleInputChange = (field: string, value: any) => {
-    setEditingData((prev: any) => ({
+  const handleInputChange = (field: string, value: unknown) => {
+    setEditingData((prev: Record<string, unknown>) => ({
       ...prev,
       [field]: value
     }));
   };
 
-  const handleArrayChange = (field: string, index: number, value: string) => {
-    setEditingData((prev: any) => ({
-      ...prev,
-      [field]: prev[field].map((item: any, i: number) => i === index ? value : item)
-    }));
-  };
 
-  const addArrayItem = (field: string, defaultValue: any = '') => {
-    setEditingData((prev: any) => ({
-      ...prev,
-      [field]: [...(prev[field] || []), defaultValue]
-    }));
-  };
-
-  const removeArrayItem = (field: string, index: number) => {
-    setEditingData((prev: any) => ({
-      ...prev,
-      [field]: prev[field].filter((_: any, i: number) => i !== index)
-    }));
-  };
 
   if (!isAuthenticated) {
     return (

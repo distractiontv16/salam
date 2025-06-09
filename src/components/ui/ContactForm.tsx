@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import {User, Mail,  } from 'lucide-react';
-import { LuMessageSquareShare } from "react-icons/lu";
+import { User, Mail, Send } from 'lucide-react';
 import { FaRegCommentDots } from 'react-icons/fa';
 
 export function ContactForm() {
@@ -40,7 +39,7 @@ export function ContactForm() {
         setErrorMessage(errorData.error || 'Something went wrong. Please try again.');
         setStatus('error');
       }
-    } catch (error) {
+    } catch {
       setErrorMessage('An unexpected error occurred. Please try again.');
       setStatus('error');
     }
@@ -124,16 +123,16 @@ export function ContactForm() {
             : 'bg-blue-600 hover:bg-blue-700 text-white'
         }`}
       >
-        {status === 'submitting' ? 'Envoi en cours...' : 'Envoyer le message'}
-        {status !== 'submitting' && <LuMessageSquareShare className="w-5 h-5" />}
+  {status === 'submitting' ? 'Envoi en cours...' : 'Envoyer le message'}
+        {status !== 'submitting' && <Send className="w-5 h-5" />}
       </button>
 
       {/* Status Messages */}
       {status === 'success' && (
         <p className="text-green-600 text-center mt-4">Message envoyé ! Merci pour votre message. Je vous répondrai dans les plus brefs délais.</p>
       )}
-      {status === 'error' && (
-        <p className="text-red-600 text-center mt-4">Une erreur s'est produite. Veuillez réessayer plus tard.</p>
+{status === 'error' && (
+        <p className="text-red-600 text-center mt-4">{errorMessage}</p>
       )}
     </form>
   );

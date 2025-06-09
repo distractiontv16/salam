@@ -126,7 +126,7 @@ const defaultContent: ContentData = {
       "Expert en Relations Client"
     ],
     email: "salamsaibou2002@gmail.com",
-    phone: "+33 7 67 43 87 81",
+    phone: "+33 06 51 10 43 34",
     location: "Rouen, France"
   },
   
@@ -164,7 +164,7 @@ const defaultContent: ContentData = {
     subtitle: "Restons en contact",
     description: "Je suis toujours ouvert aux discussions sur de nouveaux projets, des idées créatives, ou des opportunités d'alternance en Supply Chain.",
     email: "salamsaibou2002@gmail.com",
-    phone: "+33 7 67 43 87 81",
+    phone: "+33 06 51 10 43 34",
     linkedin: "linkedin.com/in/saibou-abdou-salam",
     successMessage: "Message envoyé ! Merci pour votre message. Je vous répondrai dans les plus brefs délais.",
     errorMessage: "Une erreur s'est produite. Veuillez réessayer plus tard."
@@ -310,7 +310,7 @@ const defaultContent: ContentData = {
     name: "SAIBOU ABDOU SALAM",
     description: "Étudiant en Bachelor Supply Chain et Co-Fondateur de Fiabilitech. Passionné par l'entrepreneuriat et la transformation digitale.",
     email: "salamsaibou2002@gmail.com",
-    phone: "+33 7 67 43 87 81",
+    phone: "+33 06 51 10 43 34",
     location: "Rouen, France",
     copyright: "Tous droits réservés.",
     madeWith: "pour ma recherche d'alternance"
