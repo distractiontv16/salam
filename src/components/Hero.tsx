@@ -5,15 +5,11 @@ import { TextSlider } from './ui/TextSlider';
 import { SocialLinks } from './hero/SocialLinks';
 import { ContactInfo } from './hero/ContactInfo';
 import { ActionButtons } from './hero/ActionButtons';
+import { useContent } from '../contexts/ContentContext';
 
 export function Hero() {
-  const roles = [
-    "Étudiant en Bachelor Supply Chain",
-    "Co-Fondateur Fiabilitech",
-    "Spécialiste en Gestion Commerciale",
-    "Passionné d'Entrepreneuriat",
-    "Expert en Relations Client",
-  ];
+  const { content } = useContent();
+  const { name, roles } = content.hero;
 
   return (
     <section
@@ -37,7 +33,7 @@ export function Hero() {
               Salut! <Hand className="inline-block w-4 h-4 origin-[70%_70%] animate-wave" /> Je suis
               </div>
               <h1 className="text-4xl lg:text-6xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 bg-clip-text text-transparent animate-gradient">
-                SAIBOU ABDOU SALAM
+                {name}
               </h1>
               <div className="text-xl md:text-2xl text-gray-600 dark:text-gray-300">
                 <TextSlider words={roles} delay={3000} />

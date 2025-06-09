@@ -1,6 +1,7 @@
 import { User2, Code2, Lightbulb } from "lucide-react";
 import { GoGoal } from "react-icons/go";
 import { SectionTitle } from "./ui/SectionTitle";
+import { useContent } from "../contexts/ContentContext";
 
 const aboutSections = [
   {
@@ -46,6 +47,36 @@ const aboutSections = [
 ];
 
 export function About() {
+  const { content } = useContent();
+  const { intro, description1, description2, callToAction, sections } = content.about;
+
+  const aboutSectionsData = [
+    {
+      icon: User2,
+      title: "Qui je suis",
+      description: sections.whoIAm,
+      color: "bg-blue-600",
+    },
+    {
+      icon: Code2,
+      title: "Ce que je fais",
+      description: sections.whatIDo,
+      color: "bg-purple-600",
+    },
+    {
+      icon: GoGoal,
+      title: "Mes objectifs",
+      description: sections.myGoals,
+      color: "bg-green-600",
+    },
+    {
+      icon: Lightbulb,
+      title: "Ma philosophie",
+      description: sections.myPhilosophy,
+      color: "bg-orange-600",
+    },
+  ];
+
   return (
     <section id="about" className="py-20 relative overflow-hidden">
       {/* Background Elements */}
@@ -54,18 +85,18 @@ export function About() {
       </div>
 
       <div className="container mx-auto px-6 relative">
-        <SectionTitle>About Me</SectionTitle>
+        <SectionTitle>{intro}</SectionTitle>
 
         {/* Introduction */}
         <div className="max-w-5xl mx-auto mb-16 text-center">
           <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-            Passionné par la tech et l'entrepreneuriat, j'ai lancé Fiabilitech avec une conviction : le digital doit être puissant, fluide et aligné avec vos objectifs.
+            {description1}
           </p>
           <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed mt-4">
-            Aujourd'hui, je transforme cette vision en solutions web et mobile sur mesure, en combinant rigueur technique, gestion de projet agile et une obsession : vos résultats.
+            {description2}
           </p>
           <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed mt-4 font-semibold">
-            Besoin d'un partenaire qui allie créativité et exécution sans compromis?
+            {callToAction}
           </p>
 
           {/* Call to Action Buttons */}
@@ -95,7 +126,7 @@ export function About() {
 
         {/* About Section Cards */}
         <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
-          {aboutSections.map(({ icon: Icon, title, description, color }) => (
+          {aboutSectionsData.map(({ icon: Icon, title, description, color }) => (
             <div key={title} className="relative group">
               {/* Background Effect */}
               <div className={`absolute inset-0 ${color} rounded-xl blur-xl opacity-20 group-hover:opacity-60 transition-opacity duration-300 pointer-events-none`} />

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Phone, Mail, MapPin } from 'lucide-react';
+import { useContent } from '../../contexts/ContentContext';
 
 interface ContactItemProps {
   icon: React.ReactNode;
@@ -23,21 +24,24 @@ function ContactItem({ icon, text, href }: ContactItemProps) {
 }
 
 export function ContactInfo() {
+  const { content } = useContent();
+  const { phone, email, location } = content.hero;
+
   return (
     <div className="flex flex-col items-center gap-0">
       <ContactItem
         icon={<Phone className="w-5 h-5" />}
-        text="+33 06 51 10 43 34"
-        href="tel:+33767438781"
+        text={phone}
+        href={`tel:${phone.replace(/\s/g, '')}`}
       />
       <ContactItem
         icon={<Mail className="w-5 h-5" />}
-        text="salamsaibou2002@gmail.com"
-        href="mailto:salamsaibou2002@gmail.com"
+        text={email}
+        href={`mailto:${email}`}
       />
       <ContactItem
         icon={<MapPin className="w-5 h-5" />}
-        text="Rouen, France"
+        text={location}
       />
     </div>
   );

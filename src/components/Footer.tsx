@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from './Link';
 import { SocialLinks } from './hero/SocialLinks';
 import { Mail, Phone, MapPin, Heart } from 'lucide-react';
+import { useContent } from '../contexts/ContentContext';
 
 interface FooterLinkProps {
   href: string;
@@ -12,7 +13,7 @@ function FooterLink({ href, children }: FooterLinkProps) {
   return (
     <Link
       href={href}
-      className="text-gray-300 hover:text-blue-400 transition-colors duration-200 text-sm hover:translate-x-1 transform inline-block"
+      className="block text-gray-300 hover:text-blue-400 transition-colors duration-200 text-sm hover:translate-x-1 transform py-1"
     >
       {children}
     </Link>
@@ -20,6 +21,8 @@ function FooterLink({ href, children }: FooterLinkProps) {
 }
 
 export function Footer() {
+  const { content } = useContent();
+  const { name, description, email, phone, location, copyright, madeWith } = content.footer;
   const currentYear = new Date().getFullYear();
 
   const quickLinks = [
@@ -48,24 +51,23 @@ export function Footer() {
           {/* Colonne 1: Profil */}
           <div className="md:col-span-2">
             <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4">
-              SAIBOU ABDOU SALAM
+              {name}
             </h3>
             <p className="text-gray-300 mb-4 leading-relaxed">
-              Étudiant en Bachelor Supply Chain et Co-Fondateur de Fiabilitech.
-              Passionné par l'entrepreneuriat et la transformation digitale.
+              {description}
             </p>
             <div className="space-y-2">
               <div className="flex items-center gap-3 text-gray-300">
                 <Mail className="w-4 h-4 text-blue-400" />
-                <span className="text-sm">salamsaibou2002@gmail.com</span>
+                <span className="text-sm">{email}</span>
               </div>
               <div className="flex items-center gap-3 text-gray-300">
                 <Phone className="w-4 h-4 text-blue-400" />
-                <span className="text-sm">+33 06 51 10 43 34</span>
+                <span className="text-sm">{phone}</span>
               </div>
               <div className="flex items-center gap-3 text-gray-300">
                 <MapPin className="w-4 h-4 text-blue-400" />
-                <span className="text-sm">Rouen, France</span>
+                <span className="text-sm">{location}</span>
               </div>
             </div>
           </div>
@@ -73,9 +75,11 @@ export function Footer() {
           {/* Colonne 2: Navigation Rapide */}
           <div>
             <h4 className="text-lg font-semibold mb-4 text-blue-400">Navigation</h4>
-            <nav className="space-y-2">
+            <nav className="space-y-3">
               {quickLinks.map(({ href, label }) => (
-                <FooterLink key={href} href={href}>{label}</FooterLink>
+                <div key={href}>
+                  <FooterLink href={href}>{label}</FooterLink>
+                </div>
               ))}
             </nav>
           </div>
@@ -112,10 +116,10 @@ export function Footer() {
             {/* Copyright */}
             <div className="text-center md:text-left">
               <p className="text-gray-400 text-sm">
-                © {currentYear} SAIBOU ABDOU SALAM. Tous droits réservés.
+                © {currentYear} {name}. {copyright}
               </p>
               <p className="text-gray-500 text-xs mt-1 flex items-center justify-center md:justify-start gap-1">
-                Fait avec <Heart className="w-3 h-3 text-red-400" /> pour ma recherche d'alternance
+                Fait avec <Heart className="w-3 h-3 text-red-400" /> {madeWith}
               </p>
             </div>
 

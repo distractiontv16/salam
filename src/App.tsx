@@ -1,4 +1,6 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ContentProvider } from './contexts/ContentContext';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
@@ -11,12 +13,13 @@ import { Languages } from './components/Languages';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { LoadingScreen } from './components/loading/LoadingScreen';
+import { AdminPanel } from './components/admin/AdminPanel';
 import { useLoading } from './hooks/useLoading';
 import { CustomCursor } from "./components/ui/CustomCursor";
 import { ScrollToTop } from "./components/ui/ScrollToTop";
 import { Analytics } from '@vercel/analytics/react';
 
-function App() {
+function MainPortfolio() {
   const isLoading = useLoading();
 
   return (
@@ -39,6 +42,19 @@ function App() {
         <Analytics />
       </div>
     </>
+  );
+}
+
+function App() {
+  return (
+    <ContentProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<MainPortfolio />} />
+          <Route path="/salam-admin" element={<AdminPanel />} />
+        </Routes>
+      </Router>
+    </ContentProvider>
   );
 }
 
