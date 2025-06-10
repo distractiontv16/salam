@@ -1,55 +1,39 @@
-import React, { useState } from 'react';
-import { User, Mail, Send } from 'lucide-react';
+import React from 'react';
+import { User, Mail, Send, AlertCircle, CheckCircle } from 'lucide-react';
 import { FaRegCommentDots } from 'react-icons/fa';
+import { useForm, ValidationError } from '@formspree/react';
+import { useContent } from '../../contexts/ContentContext';
+import { FORMSPREE_CONFIG } from '../../config/formspree';
 
 export function ContactForm() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
+  const { content } = useContent();
+  const { successMessage, errorMessage } = content.contact;
 
-  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
-  const [errorMessage, setErrorMessage] = useState('');
+  // Utilisation de la configuration Formspree
+  const [state, handleSubmit] = useForm(FORMSPREE_CONFIG.FORM_ID);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault(); // Prevent default form submission
-    setStatus('submitting');
-    setErrorMessage('');
-
-    try {
-      const response = await fetch('https://formspree.io/f/mvggvyar', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        setStatus('success');
-        setFormData({ name: '', email: '', message: '' }); // Reset the form
-      } else {
-        const errorData = await response.json();
-        setErrorMessage(errorData.error || 'Something went wrong. Please try again.');
-        setStatus('error');
-      }
-    } catch {
-      setErrorMessage('An unexpected error occurred. Please try again.');
-      setStatus('error');
-    }
-  };
+  // Affichage du message de succès
+  if (state.succeeded) {
+    return (
+      <div className="text-center py-8">
+        <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
+        <h3 className="text-xl font-semibold text-green-600 mb-2">Message envoyé !</h3>
+        <p className="text-gray-600 dark:text-gray-300">{successMessage}</p>
+        <button
+          onClick={() => window.location.reload()}
+          className="mt-4 px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+        >
+          Envoyer un autre message
+        </button>
+      </div>
+    );
+  }
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       {/* Name */}
       <div>
-        <label htmlFor="name" className="block text-sm font-medium mb-2">
+        <label htmlFor="name" className="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">
           Nom
         </label>
         <div className="relative">
@@ -60,18 +44,17 @@ export function ContactForm() {
             type="text"
             id="name"
             name="name"
-            value={formData.name}
-            onChange={handleChange}
             required
             placeholder="Entrez votre nom"
-            className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-gray-100 dark:bg-gray-800 placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+            className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-gray-100 dark:bg-gray-800 placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:outline-none text-gray-900 dark:text-gray-100"
           />
+          <ValidationError prefix="Name" field="name" errors={state.errors} />
         </div>
       </div>
 
       {/* Email */}
       <div>
-        <label htmlFor="email" className="block text-sm font-medium mb-2">
+        <label htmlFor="email" className="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">
           Email
         </label>
         <div className="relative">
@@ -82,18 +65,17 @@ export function ContactForm() {
             type="email"
             id="email"
             name="email"
-            value={formData.email}
-            onChange={handleChange}
             required
             placeholder="Entrez votre email"
-            className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-gray-100 dark:bg-gray-800 placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+            className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-gray-100 dark:bg-gray-800 placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:outline-none text-gray-900 dark:text-gray-100"
           />
+          <ValidationError prefix="Email" field="email" errors={state.errors} />
         </div>
       </div>
 
       {/* Message */}
       <div>
-        <label htmlFor="message" className="block text-sm font-medium mb-2">
+        <label htmlFor="message" className="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">
           Message
         </label>
         <div className="relative">
@@ -103,37 +85,49 @@ export function ContactForm() {
           <textarea
             id="message"
             name="message"
-            value={formData.message}
-            onChange={handleChange}
             required
             placeholder="Entrez votre message"
             rows={4}
-            className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-gray-100 dark:bg-gray-800 placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:outline-none resize-none"
+            className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-gray-100 dark:bg-gray-800 placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:outline-none resize-none text-gray-900 dark:text-gray-100"
           />
+          <ValidationError prefix="Message" field="message" errors={state.errors} />
         </div>
       </div>
 
       {/* Submit Button */}
       <button
         type="submit"
-        disabled={status === 'submitting'}
-        className={`w-full py-3 px-6 rounded-lg flex items-center justify-center gap-2 ${
-          status === 'submitting'
-            ? 'bg-blue-400'
-            : 'bg-blue-600 hover:bg-blue-700 text-white'
+        disabled={state.submitting}
+        className={`w-full py-3 px-6 rounded-lg flex items-center justify-center gap-2 transition-all duration-200 ${
+          state.submitting
+            ? 'bg-blue-400 cursor-not-allowed'
+            : 'bg-blue-600 hover:bg-blue-700 hover:scale-105 text-white'
         }`}
       >
-  {status === 'submitting' ? 'Envoi en cours...' : 'Envoyer le message'}
-        {status !== 'submitting' && <Send className="w-5 h-5" />}
+        {state.submitting ? 'Envoi en cours...' : 'Envoyer le message'}
+        {!state.submitting && <Send className="w-5 h-5" />}
       </button>
 
-      {/* Status Messages */}
-      {status === 'success' && (
-        <p className="text-green-600 text-center mt-4">Message envoyé ! Merci pour votre message. Je vous répondrai dans les plus brefs délais.</p>
+      {/* Error Messages */}
+      {state.errors && Object.keys(state.errors).length > 0 && (
+        <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-4">
+          <div className="flex items-center gap-2 text-red-600 dark:text-red-400">
+            <AlertCircle className="w-5 h-5" />
+            <span className="font-medium">Erreur lors de l'envoi</span>
+          </div>
+          <p className="text-red-600 dark:text-red-400 text-sm mt-1">
+            {errorMessage || 'Une erreur s\'est produite. Veuillez réessayer plus tard.'}
+          </p>
+        </div>
       )}
-{status === 'error' && (
-        <p className="text-red-600 text-center mt-4">{errorMessage}</p>
-      )}
+
+      {/* Info Message */}
+      <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
+        <p className="text-blue-600 dark:text-blue-400 text-sm">
+          💡 <strong>Note :</strong> Ce formulaire utilise Formspree pour l'envoi sécurisé des messages.
+          Vos données sont protégées et ne seront utilisées que pour vous répondre.
+        </p>
+      </div>
     </form>
   );
 }

@@ -8,16 +8,30 @@
 ✅ **Threads** : `https://www.threads.com/@ldn_h24` (remplace Instagram)
 ✅ **Twitter** : Complètement supprimé
 
+### Configuration Formspree
+🔧 **Formulaire de Contact** : Configuré avec les hooks Formspree officiels
+⚠️ **Action Requise** : Vous devez configurer votre compte Formspree (voir FORMSPREE_SETUP_GUIDE.md)
+
 ### Fichiers Modifiés
 1. `src/components/hero/SocialLinks.tsx` - Composant principal des liens sociaux
 2. `src/contexts/ContentContext.tsx` - Contexte de contenu pour la section Contact
-3. `initial-data.json` - Données de configuration
-4. `contenu-complet-site-web.txt` - Documentation
+3. `src/components/ui/ContactForm.tsx` - Formulaire de contact avec Formspree
+4. `src/config/formspree.ts` - Configuration Formspree
+5. `initial-data.json` - Données de configuration
+6. `contenu-complet-site-web.txt` - Documentation
 
 ## Étapes de Déploiement sur Hostinger
 
 ### 1. Préparation des Fichiers
 ✅ **Build de Production Créé** : Le dossier `dist/` contient tous les fichiers optimisés pour la production.
+
+⚠️ **IMPORTANT - Configuration Formspree Requise** :
+Avant le déploiement, vous DEVEZ configurer Formspree :
+1. Consultez le fichier `FORMSPREE_SETUP_GUIDE.md`
+2. Créez votre compte Formspree
+3. Obtenez votre ID de formulaire
+4. Mettez à jour `src/config/formspree.ts`
+5. Reconstruisez l'application avec `npm run build`
 
 ### 2. Connexion à Hostinger
 
