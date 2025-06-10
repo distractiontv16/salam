@@ -165,7 +165,7 @@ const defaultContent: ContentData = {
     description: "Je suis toujours ouvert aux discussions sur de nouveaux projets, des idées créatives, ou des opportunités d'alternance en Supply Chain.",
     email: "salamsaibou2002@gmail.com",
     phone: "+33 06 51 10 43 34",
-    linkedin: "linkedin.com/in/saibou-abdou-salam",
+    linkedin: "linkedin.com/in/abdou-saibou",
     successMessage: "Message envoyé ! Merci pour votre message. Je vous répondrai dans les plus brefs délais.",
     errorMessage: "Une erreur s'est produite. Veuillez réessayer plus tard."
   },

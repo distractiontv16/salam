@@ -1,27 +1,21 @@
-import { Github, Linkedin, Instagram } from 'lucide-react';
-import { FaWhatsapp } from 'react-icons/fa';
-import { FaXTwitter } from 'react-icons/fa6';
+import { Github, Linkedin } from 'lucide-react';
+import { FaWhatsapp, FaThreads } from 'react-icons/fa6';
 
 const links = [
   {
-    href: 'https://linkedin.com/in/saibou-abdou-salam',
+    href: 'https://www.linkedin.com/in/abdou-saibou',
     icon: <Linkedin className="w-6 h-6 text-[#0077B5]" />,
     label: 'LinkedIn',
   },
   {
-    href: 'https://instagram.com/',
-    icon: <Instagram className="w-6 h-6 text-[#E1306C]" />,
-    label: 'Instagram',
+    href: 'https://www.threads.com/@ldn_h24',
+    icon: <FaThreads className="w-6 h-6 text-gray-900 dark:text-white" />,
+    label: 'Threads',
   },
   {
-    href: 'https://wa.me/33767438781',
+    href: 'https://wa.me/33651104334',
     icon: <FaWhatsapp className="w-6 h-6 text-[#25D366]" />,
     label: 'WhatsApp',
-  },
-  {
-    href: 'https://twitter.com/',
-    icon: <FaXTwitter className="w-6 h-6 text-gray-900 dark:text-white" />,
-    label: 'Twitter',
   },
 ];
 
